@@ -1,0 +1,79 @@
+<html>
+  <head></head>
+  <style>
+    :root {
+      --white: #ffffff;
+      --transparent: transparent;
+
+      --grey-050: #fcfcfd; /* #fafafa; */
+      --grey-080: #f8fafc; /* #f9f9f9; */
+      --grey-100: #f1f5f9; /* #f7f7f7; */
+      --grey-200: #e2e8f0; /* #e6e6e6; */
+      --grey-300: #cbd5e1; /* #cfcfcf; */
+      --grey-500: #94a3b8; /* #aaa; */
+      --grey-750: #64708b; /* #666; */
+      --grey-800: #475569; /* #555; */
+      --grey-900: #334155; /* #333; */
+      --grey-950: #1e293b; /* #111; */
+
+      --sidebar-collapsed: 160px;
+      --sidebar-expanded: 320px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--grey-050);
+      color: var(--grey-900);
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: var(--sidebar-collapsed);
+      background: var(--grey-100);
+      border-right: 1px solid var(--grey-200);
+      transition: background-color 150ms ease;
+      z-index: 10;
+    }
+
+    .sidebar:hover {
+      background: var(--grey-200);
+    }
+
+    .back-button {
+      position: fixed;
+      top: 200px;
+      left: calc(var(--sidebar-collapsed) + 6px);
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid var(--grey-200);
+      background: var(--white);
+      color: var(--grey-900);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+      user-select: none;
+      z-index: 5;
+    }
+
+    .back-button:hover {
+      background: var(--grey-080);
+    }
+  </style>
+  <body>
+    <div class="sidebar" aria-hidden="true"></div>
+    <button class="back-button" type="button" aria-label="Back">←</button>
+    <script>
+      // Intentionally empty: hover behavior is handled via CSS to match the prototype requirements.
+    </script>
+  </body>
+</html>
